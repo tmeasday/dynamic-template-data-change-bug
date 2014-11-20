@@ -1,0 +1,22 @@
+<head>
+  <title>blaze-with-bug</title>
+</head>
+
+<body>
+  <h1>Welcome to Meteor!</h1>
+
+  {{> hello}}
+</body>
+
+<template name="hello">
+  {{#with withData}}
+    {{> subtemplate}}
+  {{/with}}
+  
+  {{> DynamicTemplate data=withData template='subtemplate'}}
+  <button>Click</button>
+</template>
+
+<template name="subtemplate">
+  {{helper}}
+</template>
